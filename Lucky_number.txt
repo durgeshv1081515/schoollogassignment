@@ -1,0 +1,29 @@
+arr=[1,1,2,2,2,3,3,3,3]    
+n=len(arr)
+checked = [False for i in range(n)] 
+lucky_num=[]
+for i in range(n):
+    if (checked[i] == True): continue
+    count = 1
+    for j in range(i + 1, n, 1):
+        
+        
+        if (arr[i] == arr[j]): 
+            checked[j] = True
+            count += 1
+    
+    
+    if arr[i]==count:
+        lucky_num.append(arr[i])
+        
+m=len(lucky_num)
+if(m==0):
+    print("-1")
+else:
+
+    max=lucky_num[0]
+
+    for j in range(m):
+        if lucky_num[j]>max:
+            max=lucky_num[j]
+    print(max)
